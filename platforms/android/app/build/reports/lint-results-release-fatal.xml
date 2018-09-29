@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 3.0.0">
+
+    <issue
+        id="HardcodedDebugMode"
+        severity="Fatal"
+        message="Avoid hardcoding the debug mode; leaving it out allows debug and release builds to automatically assign one"
+        category="Security"
+        priority="5"
+        summary="Hardcoded value of `android:debuggable` in the manifest"
+        explanation="It&apos;s best to leave out the `android:debuggable` attribute from the manifest. If you do, then the tools will automatically insert `android:debuggable=true` when building an APK to debug on an emulator or device. And when you perform a release build, such as Exporting APK, it will automatically set it to `false`.&#xA;&#xA;If on the other hand you specify a specific value in the manifest file, then the tools will always use it. This can lead to accidentally publishing your app with debug information."
+        errorLine1="    &lt;application android:debuggable=&quot;false&quot; android:hardwareAccelerated=&quot;true&quot; android:icon=&quot;@mipmap/icon&quot; android:label=&quot;@string/app_name&quot; android:supportsRtl=&quot;true&quot;>"
+        errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Project\Android\Snowy_Editor\platforms\android\app\src\main\AndroidManifest.xml"
+            line="5"
+            column="18"/>
+    </issue>
+
+</issues>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="docs/css/ionicons.min.css">
+  <link rel="stylesheet" href="lib/ionic.bundle.css">
+  <link rel="stylesheet" href="lib/katex.min.css">
+  <script src="lib/katex.min.js"></script>
+  <link href="lib/font.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="lib/autoresize.js"></script>
+  <script src="lib/turndown.js"></script>
+  <script src="lib/core/dist/ionic.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/clipboard.js"></script>
+  <script src="lib/hljs.js"></script>
+  <script src="lib/lang.js"></script>
+  <script src="lib/beautify-html.js"></script>
+  <script src="lib/codeflask.min.js"></script>
+  <script src="lib/javascript.min.js"></script>
+  <script src="lib/jquery-3.3.1.min.js"></script>
+  <script src="lib/monokai-sublime.min.css"></script>
+  <script src="lib/quill.js"></script>
+  <link rel="stylesheet" href="lib/monokai-sublime.min.css">
+  <link rel="stylesheet" href="lib/snow.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="cordova.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<body>
+  <ion-app>
+
+    <ion-toolbar color="light">
+
+      <ion-buttons slot="secondary">
+        <ion-button color="dark" onclick=" presentActionSheet()">
+          <ion-icon slot="icon-only" name="more"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-title style="text-align: center;  font-size:28px;  
+    font-weight: 300;  font-family: 'Cookie', cursive; margin-left: 20px;">Snowy</ion-title>
+
+    </ion-toolbar>
+
+
+    <div id="toolbar">
+      <select class="ql-font">
+        <option selected>Sans Serif</option>
+        <option value="inconsolata">Inconsolata</option>
+        <option value="roboto">Roboto</option>
+        <option value="mirza">Mirza</option>
+        <option value="arial">Arial</option>
+      </select>
+      <select class="ql-size"></select>
+      <button class="ql-bold"></button>
+      <button class="ql-italic"></button>
+      <button class="ql-underline"></button>
+      <button class="ql-strike"></button>
+      <button class="ql-script" value="sub"></button>
+      <button class="ql-script" value="super"></button>
+      <button class="ql-header" value="1"></button>
+      <button class="ql-header" value="2"></button>
+      <button class="ql-blockquote"></button>
+      <button class="ql-code-block"></button>
+      <button class="ql-list" value="ordered"></button>
+      <button class="ql-list" value="bullet"></button>
+      <select class="ql-color"></select>
+      <select class="ql-background"></select>
+      <button class="ql-indent" value="-1"></button>
+      <button class="ql-indent" value="+1"></button>
+      <button class="ql-direction" value="rtl"></button>
+      <select class="ql-align"></select>
+      <button class="ql-link"></button>
+      <button class="ql-image"></button>
+      <button class="ql-video"></button>
+      <button class="ql-formula"></button>
+      <button class="ql-clean"></button>
+      <button id="undo">
+        <ion-icon style="font-size: 15px;" name="undo"></ion-icon>
+      </button>
+      <button id="redo">
+        <ion-icon style="font-size: 15px;" name="redo"></ion-icon>
+      </button>
+      <button id="clear">
+        <ion-icon style="font-size: 15px;" name="trash"></ion-icon>
+      </button>
+    </div>
+
+    <ion-content>
+      <ion-action-sheet-controller></ion-action-sheet-controller>
+      <ion-alert-controller></ion-alert-controller>
+      <ion-modal-controller></ion-modal-controller>
+      <div id="editor"></div>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button mini color="dark">
+          <ion-icon name="arrow-dropup"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+          <input type="file" id="fileInput">
+          <ion-fab-button color="light" id="openfolder">
+            <ion-icon name="folder"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button color="light" id="save">
+            <ion-icon name="code"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+
+    </ion-content>
+  </ion-app>
+
+</body>
+
+</html>

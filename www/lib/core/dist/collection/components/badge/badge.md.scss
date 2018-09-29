@@ -1,0 +1,9 @@
+@import "./badge";
+@import "./badge.md.vars";
+
+// Material Design Badge
+// --------------------------------------------------
+
+:host {
+  @include border-radius($badge-md-border-radius);
+}

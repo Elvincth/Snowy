@@ -1,0 +1,17 @@
+@import "./item-option";
+@import "./item-option.ios.vars";
+
+// iOS Item Option
+// --------------------------------------------------
+
+:host {
+  font-size: $item-option-button-ios-font-size;
+}
+
+:host(.in-list.item-options-end:last-child) {
+  @include safe-area-padding-horizontal(null, .7em);
+}
+
+:host(.in-list.item-options-start:first-child) {
+  @include safe-area-padding-horizontal(.7em, null);
+}

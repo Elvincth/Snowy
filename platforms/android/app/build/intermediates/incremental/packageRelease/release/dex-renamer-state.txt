@@ -1,0 +1,4 @@
+#Sun Sep 23 00:25:43 CST 2018
+base.0=D\:\\Project\\Android\\Snowy_Editor\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+renamed.0=classes.dex
+file.0=D\:\\Project\\Android\\Snowy_Editor\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex

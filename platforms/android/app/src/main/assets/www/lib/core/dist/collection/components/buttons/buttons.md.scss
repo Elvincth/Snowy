@@ -1,0 +1,114 @@
+@import "./buttons.md.vars";
+@import "./buttons";
+
+// Material Design Toolbar Default Button
+// --------------------------------------------------
+
+::slotted(*) .button {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --height: 32px;
+  --box-shadow: none;
+
+  font-size: #{$toolbar-md-button-font-size};
+  font-weight: 500;
+}
+
+::slotted(*) .button:not(.button-round) {
+  --border-radius: #{$toolbar-md-button-border-radius};
+}
+
+
+// Material Design Toolbar w/ Color Default Button
+// --------------------------------------------------
+
+:host-context(.ion-color)::slotted(*) .button {
+  --color: currentColor;
+  --color-activated: currentColor;
+}
+
+
+// Material Design Toolbar Solid Button
+// --------------------------------------------------
+
+::slotted(*) .button-solid {
+  --color: #{$toolbar-md-background-color};
+  --color-activated: #{$toolbar-md-background-color};
+  --background: #{$toolbar-md-text-color};
+  --background-activated: #{$toolbar-md-text-color};
+}
+
+
+// Material Design Toolbar Outline Button
+// --------------------------------------------------
+
+::slotted(*) .button-outline {
+  --color: currentColor;
+  --color-activated: currentColor;
+  --background: transparent;
+  --background-activated: transparent;
+  --border-color: currentColor;
+}
+
+
+// Material Design Toolbar Clear Button
+// --------------------------------------------------
+
+::slotted(*) .button-clear {
+  --color: currentColor;
+  --color-activated: currentColor;
+  --background: transparent;
+}
+
+
+// Material Design Toolbar Button Icon
+// --------------------------------------------------
+::slotted(*) ion-icon[slot="start"] {
+  @include margin(0);
+  @include margin-horizontal(null, .3em);
+
+  font-size: 1.4em;
+  pointer-events: none;
+}
+
+::slotted(*) ion-icon[slot="end"] {
+  @include margin(0);
+  @include margin-horizontal(.4em, null);
+
+  font-size: 1.4em;
+  pointer-events: none;
+}
+
+::slotted(*) ion-icon[slot="icon-only"] {
+  @include padding(0);
+  @include margin(0);
+
+  font-size: 1.8em;
+  pointer-events: none;
+}
+
+
+// Material Design Toolbar Button Placement
+// --------------------------------------------------
+
+:host([slot="start"]) {
+  order: map-get($toolbar-order-md, buttons-start);
+}
+
+:host([slot="secondary"]) {
+  order: map-get($toolbar-order-md, buttons-secondary);
+}
+
+:host([slot="primary"]) {
+  order: map-get($toolbar-order-md, buttons-primary);
+
+  text-align: end;
+}
+
+:host([slot="end"]) {
+  order: map-get($toolbar-order-md, buttons-end);
+
+  text-align: end;
+}

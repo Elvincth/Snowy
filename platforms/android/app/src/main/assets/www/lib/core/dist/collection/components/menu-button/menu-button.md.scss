@@ -1,0 +1,13 @@
+@import "./menu-button";
+@import "./menu-button.md.vars";
+
+// MD Menu Button
+// --------------------------------------------------
+
+button {
+  @include padding(0, 8px);
+}
+
+ion-icon {
+  font-size: 26px;
+}

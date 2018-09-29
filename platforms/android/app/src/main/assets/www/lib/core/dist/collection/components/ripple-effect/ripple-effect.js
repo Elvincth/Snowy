@@ -1,0 +1,52 @@
+import { rIC } from '../../utils/helpers';
+export class RippleEffect {
+    addRipple(pageX, pageY) {
+        rIC(() => this.prepareRipple(pageX, pageY));
+    }
+    prepareRipple(pageX, pageY) {
+        let x;
+        let y;
+        let size;
+        this.queue.read(() => {
+            const rect = this.el.getBoundingClientRect();
+            const width = rect.width;
+            const height = rect.height;
+            size = Math.min(Math.sqrt(width * width + height * height) * 2, MAX_RIPPLE_DIAMETER);
+            x = pageX - rect.left - (size * 0.5);
+            y = pageY - rect.top - (size * 0.5);
+        });
+        this.queue.write(() => {
+            const div = this.win.document.createElement('div');
+            div.classList.add('ripple-effect');
+            const style = div.style;
+            const duration = Math.max(RIPPLE_FACTOR * Math.sqrt(size), MIN_RIPPLE_DURATION);
+            style.top = y + 'px';
+            style.left = x + 'px';
+            style.width = style.height = size + 'px';
+            style.animationDuration = duration + 'ms';
+            const container = this.el.shadowRoot || this.el;
+            container.appendChild(div);
+            setTimeout(() => div.remove(), duration + 50);
+        });
+    }
+    static get is() { return "ion-ripple-effect"; }
+    static get encapsulation() { return "shadow"; }
+    static get properties() { return {
+        "addRipple": {
+            "method": true
+        },
+        "el": {
+            "elementRef": true
+        },
+        "queue": {
+            "context": "queue"
+        },
+        "win": {
+            "context": "window"
+        }
+    }; }
+    static get style() { return "/**style-placeholder:ion-ripple-effect:**/"; }
+}
+const RIPPLE_FACTOR = 35;
+const MIN_RIPPLE_DURATION = 260;
+const MAX_RIPPLE_DIAMETER = 550;
