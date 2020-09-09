@@ -10,7 +10,7 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "dependencies": {
-        "@ionic/core": "^4.0.0-beta.11",
+        "@ionic/core": "^4.0.3",
         "apk-signer": "^0.2.0",
         "cordova-android": "^7.0.0",
         "cordova-ourcodeworld-filebrowser": "git+https://github.com/ourcodeworld/cordova-ourcodeworld-filebrowser.git",
