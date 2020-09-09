@@ -52,7 +52,7 @@
     "jest": "23.5.0",
     "mocha": "^4.0.1",
     "np": "^3.0.4",
-    "puppeteer": "1.7.0",
+    "puppeteer": "5.2.1",
     "selenium-webdriver": "^3.6.0",
     "stylelint": "^9.4.0",
     "stylelint-order": "^0.8.1",
