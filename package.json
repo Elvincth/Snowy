@@ -20,7 +20,7 @@
     },
     "devDependencies": {
         "@ionic/cli-plugin-proxy": "^1.5.9",
-        "@ionic/v1-toolkit": "1.0.8"
+        "@ionic/v1-toolkit": "3.2.20"
     },
     "cordova": {
         "plugins": {
